@@ -1,0 +1,65 @@
+<main>
+  <article class="container">
+    <div class="content-left">
+      <!-- 
+                CURRENT WEATHER
+    -->
+      <section class="section current-weather" aria-label="current weather">
+        <app-current-weather></app-current-weather>
+      </section>
+
+      <!-- 
+        FORECAST
+     -->
+      <section class="section forecast" aria-labelledby="forecast-label">
+        <h2 class="title-2" id="forecast-label">5 Days Forecast</h2>
+
+        <div class="card card-lg forecast-card">
+          <ul>
+            <li>
+              <app-day-forecast></app-day-forecast>
+            </li>
+            <li>
+              <app-day-forecast></app-day-forecast>
+            </li>
+            <li>
+              <app-day-forecast></app-day-forecast>
+            </li>
+            <li>
+              <app-day-forecast></app-day-forecast>
+            </li>
+            <li>
+              <app-day-forecast></app-day-forecast>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <div class="content-right">
+      <!-- 
+        HIGHLIGHTS
+      -->
+
+      <section class="section highlights" aria-labelledby="highlights-label">
+        <div class="card card-lg">
+          <h2 class="title-2" id="highlights-label">Todays Highlights</h2>
+          <app-hightlight></app-hightlight>
+        </div>
+      </section>
+
+      <!-- 
+        HOURLY FORECAST 
+      -->
+
+      <section
+        class="section hourly-forecast"
+        aria-labelledby="hourly-forecast-label">
+        <h2 class="title-2" id="hourly-forecast-label">Today at</h2>
+        <app-hourly-forecast></app-hourly-forecast>
+      </section>
+    </div>
+
+    <div class="loading"></div>
+  </article>
+</main>
