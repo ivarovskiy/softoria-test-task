@@ -1,0 +1,24 @@
+@import '../../styles/constants';
+
+.title-2 {
+    margin-block-end: 0;
+}
+
+.card-item, .icon-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.icon-wrapper {
+    gap: 8px
+}
+
+.label-1 {
+    color: $on-surface-variant;
+    font-family: $weight-semiBold;
+}
+
+.card-item > .label-1 {
+    width: 100%;
+    text-align: right;
+}
