@@ -14,7 +14,5 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([httpInterceptor])),
     provideAnimationsAsync(),
     provideStore(reducers, { metaReducers }),
-    provideAnimationsAsync(),
-    provideAnimationsAsync(),
   ],
 };
