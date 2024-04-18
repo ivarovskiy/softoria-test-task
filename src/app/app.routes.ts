@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { favoriteGuard } from './core/guards/favorite.guard';
 import { HomeComponent } from './pages/home/home.component';
-import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 export const routes: Routes = [
   {
@@ -23,6 +22,9 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    component: PageNotFoundComponent,
+    loadComponent: () =>
+      import('./pages/page-not-found/page-not-found.component').then(
+        c => c.PageNotFoundComponent
+      ),
   },
 ];
