@@ -1,7 +1,10 @@
-import { environment } from '../../../environments/environment';
-
-export const apiEndPoint = {
-  locationAutocomplete: `${environment.apiUrl}/locations/v1/cities/autocomplete`,
-  currentWeather: `${environment.apiUrl}/currentconditions/v1/`,
-  fiveDaysForecast: `${environment.apiUrl}/forecasts/v1/daily/5day/`,
+export const defaultCityCoords = {
+  0: {
+    Latitude: 50.450001,
+    Longitude: 30.523333,
+  },
 };
+
+export const defaultCityKey = { 0: { Key: '324505' } };
+
+export const defaultCityLocalizedName = { 0: { LocalizedName: 'Kyiev' } };

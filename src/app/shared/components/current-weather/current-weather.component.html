@@ -3,27 +3,32 @@
 
   <div class="weapper">
     <p class="heading">
-      25&deg;
+      <!-- need to add pipe to tranform C into F-->
+      {{ temperature | number: '1.0-0' }}&deg;
       <sup>c</sup>
     </p>
     <img
-      src="./assets/images/weather-icons/01d.png"
+      src="https://www.awxcdn.com/adc-assets/images/weathericons/{{
+        weatherImage
+      }}.svg"
       width="64"
       height="64"
       alt="Overcast Clouds"
       class="weather-icon" />
   </div>
 
-  <p class="body-3">Overcast Clouds</p>
+  <p class="body-3">
+    {{ weatherText }}
+  </p>
 
   <ul class="meta-list">
     <li class="meta-item">
       <span class="m-icon">calendar_today</span>
-      <p class="title-3 meta-text">Thursday 16, Feb</p>
+      <p class="title-3 meta-text">{{ date | date }}</p>
     </li>
     <li class="meta-item">
       <span class="m-icon">location_on</span>
-      <p class="title-3 meta-text">London, GB</p>
+      <p class="title-3 meta-text">{{ cityName }}</p>
     </li>
   </ul>
 </div>

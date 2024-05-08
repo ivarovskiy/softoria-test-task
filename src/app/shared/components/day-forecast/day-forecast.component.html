@@ -1,17 +1,26 @@
 <div class="card-item">
   <div class="icon-wrapper">
     <img
-      src="./assets/images/weather-icons/01n.png"
+      src="https://www.awxcdn.com/adc-assets/images/weathericons/{{
+        weatherImage
+      }}.svg"
       width="36"
       height="36"
       alt="Overcast Clouds"
       class="weather-icon" />
 
-    <span class="span">
-      <p class="title-2">25</p>
-    </span>
+    <div>
+      <span class="span">
+        <p class="title-2">
+          {{ temperatureDay | temperatureConversion: 'F' }}&deg;
+        </p>
+      </span>
+      <sup class="label-1"
+        >{{ temperatureNight | temperatureConversion: 'F' }}&deg;</sup
+      >
+    </div>
   </div>
 
-  <p class="label-1">17 Feb</p>
-  <p class="label-1">Friday</p>
+  <p class="label-1">{{ date | date: 'LLL d' }}</p>
+  <p class="label-1">{{ date | date: 'EEEE' }}</p>
 </div>

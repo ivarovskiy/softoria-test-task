@@ -1,32 +1,9 @@
 @import '../../styles/constants';
 
-.slider-container {
-  overflow-x: auto;
-  margin-inline: -16px;
-}
-
-.slider-container::-webkit-scrollbar {
-  display: none;
-}
-
-.slider-list {
-  display: flex;
-  gap: 12px;
-}
-
-.slider-list:first-child {
-  margin-block-end: 16px;
-}
-
-.slider-list::before,
-.slider-list::after {
-  content: '';
-  min-width: 4px;
-}
-
 .slider-item {
-  min-width: 110px;
+  min-width: 130px;
   flex: 1 1 100%;
+  flex-grow: 1;
 }
 
 .slider-card {
@@ -39,27 +16,10 @@
 }
 
 @media (min-width: 768px) {
-  .slider-container {
-    margin-inline: 0 -24px;
-    border-bottom-left-radius: $radius-16;
-    border-top-left-radius: $radius-16;
-  }
-
-  .slider-list::before {
-    display: none;
-  }
-
-  .slider-list::after {
-    min-width: 12px;
-  }
-
   .hourly-forecast .card-sm {
     padding: 16px;
   }
 }
 
 @media (min-width: 1200px) {
-  .slider-list {
-    gap: 16px;
-  }
 }

@@ -1,50 +1,45 @@
 <header class="header">
   <div class="container">
-    <a href="#" class="logo">
-      <p class="logo text">ivarovskiy</p>
-      <p>Weather App</p>
-    </a>
-
-    <div class="search-view">
-      <!-- <app-search-field></app-search-field> -->
-      <div class="search-wrapper">
-        <input
-          type="search"
-          name="search"
-          placeholder="Search city..."
-          autocomplete="off"
-          class="search-field" />
-
-        <span class="m-icon leading-icon">search</span>
-        <button
-          class="icon-btn leading-icon has-state"
-          aria-label="close search">
-          <span class="m-icon">arrow_back</span>
-        </button>
-      </div>
-      <div class="search-result">
-        <ul class="view-list">
-          <li class="view-item">
-            <span class="m-icon">location_on</span>
-            <div>
-              <p class="item-title">London</p>
-              <p class="label-2 item-subtitle">State of London, GB</p>
-            </div>
-
-            <a href="#" class="item-link has-state" title="location"></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="header-actions">
-      <button class="icon-btn has-state">
-        <span class="m-icon icon">search</span>
-      </button>
-      <a href="#/currentloc" class="btn-primary has-state">
-        <span class="m-icon">my_location</span>
-        <span class="span">Current Location</span>
+    <nav mat-tab-nav-bar class="nav btn-primary" [tabPanel]="tabPanel">
+      <a
+        mat-tab-link
+        class="tabLink has-state"
+        routerLink="/home"
+        routerLinkActive="activeLink">
+        <span class="m-icon"> home </span>
       </a>
-    </div>
+      <a
+        mat-tab-link
+        class="tabLink has-state"
+        routerLink="/favorites"
+        routerLinkActive="activeLink">
+        <span class="m-icon"> thumb_up </span>
+      </a>
+    </nav>
+    <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+
+    @if (router.url === '/home') {
+      <div class="search-view">
+        <app-search-field></app-search-field>
+      </div>
+
+      <div class="header-actions">
+        @if (isFavorite === true) {
+          <button
+            class="btn-primary has-state"
+            (click)="removeLocationFromFavorite(cityKey)">
+            <span class="m-icon">remove</span>
+            <span class="span">Remove from favorite</span>
+          </button>
+        } @else {
+          <button
+            class="btn-primary has-state"
+            (click)="addLocationToFavorite(city)">
+            <span class="m-icon">add</span>
+            <span class="span">Add to favorite</span>
+          </button>
+        }
+      </div>
+    }
   </div>
 </header>

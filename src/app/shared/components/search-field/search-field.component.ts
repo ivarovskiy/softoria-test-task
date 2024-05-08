@@ -1,44 +1,57 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { startWith, map } from 'rxjs/operators';
+import {
+  startWith,
+  debounceTime,
+  distinctUntilChanged,
+  switchMap,
+} from 'rxjs/operators';
 import { AsyncPipe } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatIconModule } from '@angular/material/icon';
+import { AutocompleteSearchService } from '@services/http/autocomplete-search.service';
+import { ICity } from '@models/city.interface';
+import { CityService } from '@services/local/city.service';
 
 @Component({
   selector: 'app-search-field',
   standalone: true,
-  imports: [FormsModule, MatAutocompleteModule, ReactiveFormsModule, AsyncPipe],
+  imports: [
+    MatIconModule,
+    FormsModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    AsyncPipe,
+  ],
   templateUrl: './search-field.component.html',
   styleUrl: './search-field.component.scss',
 })
 export class SearchFieldComponent implements OnInit {
+  autocompleteSearchService = inject(AutocompleteSearchService);
+  cityService = inject(CityService);
+
   control = new FormControl('');
 
-  streets: string[] = [
-    'Champs-Élysées',
-    'Lombard Street',
-    'Abbey Road',
-    'Fifth Avenue',
-  ]; // temp data
-
-  filteredStreets!: Observable<string[]>;
+  filteredCities!: Observable<ICity[]>;
 
   ngOnInit() {
-    this.filteredStreets = this.control.valueChanges.pipe(
+    this.filteredCities = this.control.valueChanges.pipe(
       startWith(''),
-      map(value => this._filter(value || ''))
+      debounceTime(500),
+      distinctUntilChanged(),
+      switchMap(q => this.autocompleteSearchService.getAutocompleteResults(q))
     );
   }
 
-  private _filter(value: string): string[] {
-    const filterValue = this._normalizeValue(value);
-    return this.streets.filter(street =>
-      this._normalizeValue(street).includes(filterValue)
-    );
+  displayCityFn(city: ICity): string {
+    return city && city.LocalizedName
+      ? `${city.LocalizedName}, ${city.Country.ID}`
+      : '';
   }
 
-  private _normalizeValue(value: string): string {
-    return value.toLowerCase().replace(/\s/g, '');
+  handleSelectedCity(key: string, name: string, id: string) {
+    this.cityService.setCityKey(key);
+    this.cityService.setCityLocalizedName(`${name}, ${id}`);
   }
 }

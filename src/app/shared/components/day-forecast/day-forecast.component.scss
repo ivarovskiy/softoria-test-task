@@ -22,3 +22,14 @@
     width: 100%;
     text-align: right;
 }
+
+.card-item {
+    padding-block-end: 12px;
+    border-block-end: 1px solid $outline;
+}
+
+@media (min-width: 1200px) {
+  .title-2 {
+    $title-2: 2.2rem;
+  }
+}

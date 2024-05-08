@@ -1,1 +1,22 @@
-<p>favorites works!</p>
+<app-header></app-header>
+
+<ng-container *ngIf="favoriteLocations$ | async as locations" class="favorites">
+  <div class="favorites">
+    @if (locations.length > 0) {
+      @for (location of locations; track location) {
+        <button class="location" (click)="onClick(location)">
+          <app-current-weather [data]="location.weather"></app-current-weather>
+        </button>
+      }
+    } @else {
+      <p class="no-favorites">
+        Please, choose something
+        <span class="m-icon" style="color: red">favorite</span>
+      </p>
+    }
+  </div>
+</ng-container>
+
+<div class="footer">
+  <app-footer></app-footer>
+</div>

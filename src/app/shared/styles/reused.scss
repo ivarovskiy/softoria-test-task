@@ -81,10 +81,11 @@
   font-weight: $weight-semiBold;
 }
 
-.btn-primary[disabled] {
+.btn-primary.disabled {
   background-color: $outline;
   color: $on-surface-variant;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .btn-primary[disabled]::before {
@@ -145,6 +146,14 @@
 
 .label-2 {
   font-size: $label-2;
+}
+
+.subtitleBlock {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  font-size: $label-1;
+  color: $on-surface-variant;
 }
 
 
