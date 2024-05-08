@@ -1,27 +1,33 @@
-# SoftoriaTestTask
+# Softoria - Weather App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
+# Hi 👋, I'm Ivarovskiy. Welcome to my Angular Screening.
 
-## Development server
+The following technologies were used in the development:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- ### Angular CLI
+- ### Angular
+- ### TypeScript
+- ### RxJs
+- ### NgRx
+- ### ngrx-store-localstorage
+- ### tony-builder/asyncy
+- ### echarts
+- ### Angular Material
+- ### Angular Material Icons
+- ### Scss
+- ### Firebase Hoisting
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Created additional possibility of introducing rules from the outside
 
-## Build
+## 📝 I created my own layout and tried to display how I see a beautiful and convenient application, and I hope you like it
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# To run the application locally, copy the repository address and use the console to enter the command 
+- ## git clone (url)
+# After that, go to the folder with the copied project and enter the command 
+- ## npm install
+# After successfully installing the packages, enter the -## ng serve command in the terminal of the VS Code application
 
-## Running unit tests
+## Thanks for your attention! 🤝
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## [Try it yourself](https://angular-weather-app-81cc4.web.app/)
