@@ -1,12 +1,25 @@
 import { HttpErrorResponse, HttpInterceptorFn } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
+import { environment } from '@environments/environment';
 import { catchError, throwError } from 'rxjs';
 
 export const httpInterceptor: HttpInterceptorFn = (req, next) => {
+  const openWeatherApiHost = req.url.includes('/air_pollution');
+
+  let url = '';
+  let apiKey = '';
+
+  if (openWeatherApiHost) {
+    url = environment.openWeatherApiHost;
+    apiKey = environment.openWeatherApiKey;
+  } else {
+    url = environment.apiHost;
+    apiKey = environment.apiKey;
+  }
+
   const modifyReq = req.clone({
-    url: environment.apiHost,
+    url: req.url.replace('', url),
     setParams: {
-      apikey: environment.apiKey,
+      apikey: apiKey,
     },
   });
 

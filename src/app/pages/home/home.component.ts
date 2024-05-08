@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../../shared/layouts/header/header.component';
-import { MainComponent } from '../../shared/layouts/main/main.component';
-import { FooterComponent } from '../../shared/layouts/footer/footer.component';
+import { HeaderComponent } from '@layouts/header/header.component';
+import { FooterComponent } from '@layouts/footer/footer.component';
+import { ForecastComponent } from '@containers/forecast/forecast.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, MainComponent, FooterComponent],
+  imports: [HeaderComponent, FooterComponent, ForecastComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

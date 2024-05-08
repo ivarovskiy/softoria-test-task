@@ -1,0 +1,57 @@
+@import './constants';
+
+.mat-mdc-tab-link .mdc-tab__text-label > * {
+  color: $on-primary;
+}
+
+.mat-mdc-tab-link:active {
+  background-color: transparent !important;
+}
+
+.mat-mdc-tab-link.activeLink .mdc-tab__text-label > span {
+  color: $surface;
+}
+
+.mat-mdc-tab-link .mdc-tab__ripple::before {
+  background-color: transparent !important;
+}
+
+.mat-mdc-progress-spinner .mdc-circular-progress__determinate-circle,
+.mat-mdc-progress-spinner .mdc-circular-progress__indeterminate-circle-graphic {
+  stroke: $primary !important;
+}
+
+.mat-mdc-autocomplete-panel {
+  margin-block-start: 10px;
+  background-color: $surface !important;
+  padding: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .cdk-overlay-pane {
+    width: 100% !important;
+    height: 100%;
+    left: 0 !important;
+  }
+
+  .mat-mdc-autocomplete-panel  {
+    max-height: 100% !important;
+  }
+}
+
+.mat-mdc-option {
+  height: 56px;
+  color: $on-surface !important;
+  border-block-end: 1px solid $outline;
+  padding-left: 56px !important;
+  font-family: $ff-nunito-sans !important;
+  font-size: $body-3 !important;
+
+  .m-icon {
+    color: $on-surface-variant;
+  }
+}
+
+.mat-mdc-option:last-child {
+  border-block-end: none;
+}

@@ -1,0 +1,95 @@
+<div class="forecast">
+  @defer {
+    <article class="container">
+      <div class="content-left">
+        <!-- 
+                CURRENT WEATHER
+    -->
+
+        <section class="section current-weather" aria-label="current weather">
+          <app-current-weather [data]="mainForecastData"></app-current-weather>
+        </section>
+
+        <!-- 
+        FORECAST
+     -->
+
+        <section class="section forecast" aria-labelledby="forecast-label">
+          <div class="five-days">
+            <h2 class="title-2" id="forecast-label">5 Days Forecast</h2>
+
+            @if (isCharts) {
+              @defer {
+                <div class="card forecast-card forecast-chart">
+                  <app-chart [data]="chartData"></app-chart>
+                </div>
+              }
+            } @else {
+              <div class="card card-lg forecast-card">
+                <ul class="forecast-card">
+                  @for (
+                    dayForecast of fiveDaysForecastData;
+                    track dayForecast
+                  ) {
+                    <li class="card-item">
+                      <app-day-forecast
+                        [dayForecast]="dayForecast"></app-day-forecast>
+                    </li>
+                  }
+                </ul>
+              </div>
+            }
+          </div>
+          <button class="chart-icon" (click)="toggleCharts()">
+            Toggle Charts
+            @if (isCharts) {
+              <span class="m-icon"> expand_less </span>
+            } @else {
+              <span class="m-icon"> expand_more </span>
+            }
+          </button>
+        </section>
+
+        <section
+          class="section chart"
+          aria-labelledby="forecast-chart"></section>
+      </div>
+
+      <div class="content-right">
+        <!-- 
+        HIGHLIGHTS
+      -->
+
+        <section class="section highlights" aria-labelledby="highlights-label">
+          <div class="card card-lg">
+            <h2 class="title-2" id="highlights-label">Todays Highlights</h2>
+            <app-hightlight [data]="hightlightsForecastData"></app-hightlight>
+          </div>
+        </section>
+
+        <!-- 
+        HOURLY FORECAST 
+      -->
+
+        <section
+          class="section hourly-forecast"
+          aria-labelledby="hourly-forecast-label">
+          <h2 class="title-2" id="hourly-forecast-label">Today at</h2>
+          <div class="slider-container">
+            <ul class="slider-list">
+              @for (
+                hourForecast of twelveHoursForecastData;
+                track hourForecast
+              ) {
+                <app-hourly-forecast
+                  [data]="hourForecast"></app-hourly-forecast>
+              }
+            </ul>
+          </div>
+        </section>
+      </div>
+    </article>
+  } @placeholder (minimum 500ms) {
+    <div class="loader"><app-loader></app-loader></div>
+  }
+</div>

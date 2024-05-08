@@ -1,0 +1,26 @@
+.favorites {
+  height: calc(100vh - 151px);
+  padding: 16px;
+
+  display: flex;
+  gap: 20px;
+}
+
+.location {
+  height: fit-content;
+}
+
+.no-favorites {
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 24px;
+}
+
+.footer {
+  position: sticky;
+  bottom: 0;
+}

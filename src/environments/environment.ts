@@ -1,5 +1,7 @@
 export const environment = {
   production: true,
-  apiHost: 'http://dataservice.accuweather.com',
-  apiKey: '',
+  apiHost: 'accu weather api host',
+  apiKey: 'accu weather api key',
+  openWeatherApiKey: 'open weather api host',
+  openWeatherApiHost: 'open weather api key',
 };

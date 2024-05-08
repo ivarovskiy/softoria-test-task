@@ -65,10 +65,15 @@ html {
 }
 
 body {
+    height: 100vh;
     background-color: $background;
     color: $on-background;
     font-size: $body-3;
-    overflow: hidden;
+    // overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
 }
 
 :focus-visible {

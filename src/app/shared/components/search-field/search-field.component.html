@@ -1,13 +1,30 @@
-<form class="search-form">
+<form class="searchForm">
+  <label for="input"><span class="m-icon">search</span></label>
+
   <input
+    id="input"
     type="text"
-    placeholder="Search for a street"
+    placeholder="Search for a city..."
     [formControl]="control"
     [matAutocomplete]="auto"
-    class="example-input" />
-  <mat-autocomplete #auto="matAutocomplete">
-    @for (street of filteredStreets | async; track street) {
-      <mat-option [value]="street">{{ street }}</mat-option>
+    value="city"
+    class="cityInput" />
+  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayCityFn">
+    @for (city of filteredCities | async; track city) {
+      <mat-option
+        [value]="city"
+        (click)="
+          handleSelectedCity(city.Key, city.LocalizedName, city.Country.ID)
+        ">
+        <span class="m-icon">location_on</span>
+        <span>{{ city.LocalizedName }}</span>
+        <div class="subtitleBlock">
+          <span>State of {{ city.AdministrativeArea.LocalizedName }},</span>
+          <span>
+            {{ city.Country.ID }}
+          </span>
+        </div>
+      </mat-option>
     }
   </mat-autocomplete>
 </form>

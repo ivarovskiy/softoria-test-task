@@ -1,0 +1,176 @@
+{
+  "Headline": {
+    "EffectiveDate": "2024-04-18T20:00:00+03:00",
+    "EffectiveEpochDate": 1713459600,
+    "Severity": 3,
+    "Text": "Expect showery weather Thursday evening through Friday morning",
+    "Category": "rain",
+    "EndDate": "2024-04-19T14:00:00+03:00",
+    "EndEpochDate": 1713524400,
+    "MobileLink": "http://www.accuweather.com/en/ua/kyiv/324505/daily-weather-forecast/324505?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ua/kyiv/324505/daily-weather-forecast/324505?lang=en-us"
+  },
+  "DailyForecasts": [
+    {
+      "Date": "2024-04-18T07:00:00+03:00",
+      "EpochDate": 1713412800,
+      "Temperature": {
+        "Minimum": {
+          "Value": 41.0,
+          "Unit": "F",
+          "UnitType": 18
+        },
+        "Maximum": {
+          "Value": 46.0,
+          "Unit": "F",
+          "UnitType": 18
+        }
+      },
+      "Day": {
+        "Icon": 12,
+        "IconPhrase": "Showers",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Light"
+      },
+      "Night": {
+        "Icon": 12,
+        "IconPhrase": "Showers",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Moderate"
+      },
+      "Sources": ["AccuWeather"],
+      "MobileLink": "http://www.accuweather.com/en/ua/kyiv/324505/daily-weather-forecast/324505?day=1&lang=en-us",
+      "Link": "http://www.accuweather.com/en/ua/kyiv/324505/daily-weather-forecast/324505?day=1&lang=en-us"
+    },
+    {
+      "Date": "2024-04-19T07:00:00+03:00",
+      "EpochDate": 1713499200,
+      "Temperature": {
+        "Minimum": {
+          "Value": 37.0,
+          "Unit": "F",
+          "UnitType": 18
+        },
+        "Maximum": {
+          "Value": 52.0,
+          "Unit": "F",
+          "UnitType": 18
+        }
+      },
+      "Day": {
+        "Icon": 13,
+        "IconPhrase": "Mostly cloudy w/ showers",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Moderate"
+      },
+      "Night": {
+        "Icon": 33,
+        "IconPhrase": "Clear",
+        "HasPrecipitation": false
+      },
+      "Sources": ["AccuWeather"],
+      "MobileLink": "http://www.accuweather.com/en/ua/kyiv/324505/daily-weather-forecast/324505?day=2&lang=en-us",
+      "Link": "http://www.accuweather.com/en/ua/kyiv/324505/daily-weather-forecast/324505?day=2&lang=en-us"
+    },
+    {
+      "Date": "2024-04-20T07:00:00+03:00",
+      "EpochDate": 1713585600,
+      "Temperature": {
+        "Minimum": {
+          "Value": 45.0,
+          "Unit": "F",
+          "UnitType": 18
+        },
+        "Maximum": {
+          "Value": 62.0,
+          "Unit": "F",
+          "UnitType": 18
+        }
+      },
+      "Day": {
+        "Icon": 6,
+        "IconPhrase": "Mostly cloudy",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 12,
+        "IconPhrase": "Showers",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Moderate"
+      },
+      "Sources": ["AccuWeather"],
+      "MobileLink": "http://www.accuweather.com/en/ua/kyiv/324505/daily-weather-forecast/324505?day=3&lang=en-us",
+      "Link": "http://www.accuweather.com/en/ua/kyiv/324505/daily-weather-forecast/324505?day=3&lang=en-us"
+    },
+    {
+      "Date": "2024-04-21T07:00:00+03:00",
+      "EpochDate": 1713672000,
+      "Temperature": {
+        "Minimum": {
+          "Value": 43.0,
+          "Unit": "F",
+          "UnitType": 18
+        },
+        "Maximum": {
+          "Value": 56.0,
+          "Unit": "F",
+          "UnitType": 18
+        }
+      },
+      "Day": {
+        "Icon": 18,
+        "IconPhrase": "Rain",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Moderate"
+      },
+      "Night": {
+        "Icon": 18,
+        "IconPhrase": "Rain",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Moderate"
+      },
+      "Sources": ["AccuWeather"],
+      "MobileLink": "http://www.accuweather.com/en/ua/kyiv/324505/daily-weather-forecast/324505?day=4&lang=en-us",
+      "Link": "http://www.accuweather.com/en/ua/kyiv/324505/daily-weather-forecast/324505?day=4&lang=en-us"
+    },
+    {
+      "Date": "2024-04-22T07:00:00+03:00",
+      "EpochDate": 1713758400,
+      "Temperature": {
+        "Minimum": {
+          "Value": 39.0,
+          "Unit": "F",
+          "UnitType": 18
+        },
+        "Maximum": {
+          "Value": 50.0,
+          "Unit": "F",
+          "UnitType": 18
+        }
+      },
+      "Day": {
+        "Icon": 7,
+        "IconPhrase": "Cloudy",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Light"
+      },
+      "Night": {
+        "Icon": 7,
+        "IconPhrase": "Cloudy",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Light"
+      },
+      "Sources": ["AccuWeather"],
+      "MobileLink": "http://www.accuweather.com/en/ua/kyiv/324505/daily-weather-forecast/324505?day=5&lang=en-us",
+      "Link": "http://www.accuweather.com/en/ua/kyiv/324505/daily-weather-forecast/324505?day=5&lang=en-us"
+    }
+  ]
+}
