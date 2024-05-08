@@ -2,30 +2,39 @@
 
 # Hi 👋, I'm Ivarovskiy. Welcome to my Angular Screening.
 
-The following technologies were used in the development:
+## Technologies
 
-- ### Angular CLI
-- ### Angular
-- ### TypeScript
-- ### RxJs
-- ### NgRx
-- ### ngrx-store-localstorage
-- ### tony-builder/asyncy
-- ### echarts
-- ### Angular Material
-- ### Angular Material Icons
-- ### Scss
-- ### Firebase Hoisting
+* Angular CLI
+* Angular
+* TypeScript
+* RxJs
+* NgRx
+* ngrx-store-localstorage
+* tony-builder/asyncy
+* echarts
+* Angular Material
+* Angular Material Icons
+* Scss
+* Firebase Hoisting
 
-## 📝 I created my own layout and tried to display how I see a beautiful and convenient application, and I hope you like it
+## Getting started
 
-To run the application locally, copy the repository address and use the console to enter the command 
-## git clone (url)
-After that, go to the folder with the copied project and enter the command 
-## npm install
+### Step 1. Start up local version 
+To run the application locally, copy the repository address and use the console to enter the command:
+```
+$ git clone (url)
+```
+### Step 2. Intalling dependencies
+Start the folder with the copied project and enter the command
+```
+$ npm install
+```
+### Step 3. Start up project
 After successfully installing the packages, enter the serve command in the terminal of the VS Code application
-## ng serve
+```
+$ ng serve
+```
 
-## Thanks for your attention! 🤝
+## 📝 I created my own layout and tried to display how I see a beautiful and convenient application, and I hope you like it. Thanks for your attention! 🤝
 
 ## [Try it yourself](https://angular-weather-app-81cc4.web.app/)
