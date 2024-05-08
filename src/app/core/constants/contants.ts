@@ -7,4 +7,4 @@ export const defaultCityCoords = {
 
 export const defaultCityKey = { 0: { Key: '324505' } };
 
-export const defaultCityLocalizedName = { 0: { LocalizedName: 'Kyiev' } };
+export const defaultCityLocalizedName = { 0: { LocalizedName: 'Kyiv' } };

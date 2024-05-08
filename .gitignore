@@ -43,3 +43,6 @@ Thumbs.db
 
 # Environments
 /src/environments/environments/environment.development.ts
+
+# Firebase 
+.firebase
