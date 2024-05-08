@@ -16,7 +16,7 @@ export function getChartOptions(data: IChartData): EChartsOption {
       },
       backgroundColor: 'rgba(0,0,0,0.7)',
       padding: [10, 15],
-      extraCssText: 'min-width: 200px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);',
+      extraCssText: 'box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);',
     },
     legend: {
       data: ['Day', 'Night'],

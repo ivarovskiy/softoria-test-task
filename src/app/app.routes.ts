@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { favoriteGuard } from './core/guards/favorite.guard';
 import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
@@ -18,7 +17,6 @@ export const routes: Routes = [
       import('./pages/favorites/favorites.component').then(
         c => c.FavoritesComponent
       ),
-    canActivate: [favoriteGuard],
   },
   {
     path: '**',

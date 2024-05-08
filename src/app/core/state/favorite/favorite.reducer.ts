@@ -26,7 +26,7 @@ export const favoriteLocationsReducer = createReducer<IFavoritesLocationState>(
   on(removeFromFavorites, (state, { id }) => ({
     ...state,
     favoriteLocations: state.favoriteLocations.filter(
-      (favorite: any) => favorite.id !== id
+      (favorite: IFavoriteLocation) => favorite.id !== id
     ),
   }))
 );

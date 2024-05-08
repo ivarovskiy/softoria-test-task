@@ -1,7 +1,11 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpParams,
+} from '@angular/common/http';
 import { Injectable, inject, isDevMode } from '@angular/core';
 import twelveHoursForecast from '@mock-data/twelveHoursForecast.json';
-import { Observable, iif, of } from 'rxjs';
+import { Observable, catchError, iif, of, throwError } from 'rxjs';
 import { apiEndPoint } from '@constants/apiEndPoints';
 import { IHourlyForecastData } from '@models/weather.interface';
 
@@ -17,12 +21,23 @@ export class TwelveHourForecastService {
     return iif(
       isDevMode,
       of(twelveHoursForecast),
-      this.http.get<IHourlyForecastData>(
-        `${apiEndPoint.twelveHourForecast}${cityKey}`,
-        {
-          params,
-        }
-      )
+      this.http
+        .get<IHourlyForecastData>(
+          `${apiEndPoint.twelveHourForecast}${cityKey}`,
+          {
+            params,
+          }
+        )
+        .pipe(
+          catchError((error: HttpErrorResponse) => {
+            if (error.status === 503) {
+              console.error('API limit reached, using default data');
+              return of(twelveHoursForecast);
+            }
+
+            return throwError(() => new Error('Something went wrong'));
+          })
+        )
     );
   }
 }

@@ -35,6 +35,12 @@ export class SearchFieldComponent implements OnInit {
 
   filteredCities!: Observable<ICity[]>;
 
+  searchActive = false;
+
+  toggleSearch() {
+    this.searchActive = !this.searchActive;
+  }
+
   ngOnInit() {
     this.filteredCities = this.control.valueChanges.pipe(
       startWith(''),
