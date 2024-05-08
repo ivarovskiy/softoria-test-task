@@ -19,26 +19,28 @@
     <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
 
     @if (router.url === '/home') {
-      <div class="search-view">
-        <app-search-field></app-search-field>
-      </div>
+      <div class="actions">
+        <div class="search-view">
+          <app-search-field></app-search-field>
+        </div>
 
-      <div class="header-actions">
-        @if (isFavorite === true) {
-          <button
-            class="btn-primary has-state"
-            (click)="removeLocationFromFavorite(cityKey)">
-            <span class="m-icon">remove</span>
-            <span class="span">Remove from favorite</span>
-          </button>
-        } @else {
-          <button
-            class="btn-primary has-state"
-            (click)="addLocationToFavorite(city)">
-            <span class="m-icon">add</span>
-            <span class="span">Add to favorite</span>
-          </button>
-        }
+        <div class="header-actions">
+          @if (isFavorite === true) {
+            <button
+              class="btn-primary has-state"
+              (click)="removeLocationFromFavorite(cityKey)">
+              <span class="m-icon">remove</span>
+              <span class="span">Remove from favorite</span>
+            </button>
+          } @else {
+            <button
+              class="btn-primary has-state"
+              (click)="addLocationToFavorite(city)">
+              <span class="m-icon">add</span>
+              <span class="span">Add to favorite</span>
+            </button>
+          }
+        </div>
       </div>
     }
   </div>

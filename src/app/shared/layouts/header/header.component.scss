@@ -23,6 +23,14 @@
   font-size: 20px;
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  position: relative;
+}
+
 .header .container,
 .header-actions {
   display: flex;
@@ -31,6 +39,7 @@
 
 .header .container {
   justify-content: space-between;
+  gap: 10px;
 }
 
 .header-actions {

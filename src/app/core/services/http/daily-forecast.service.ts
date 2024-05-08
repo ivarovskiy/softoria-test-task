@@ -1,7 +1,11 @@
 import { Injectable, inject, isDevMode } from '@angular/core';
-import { Observable, iif, of } from 'rxjs';
+import { Observable, catchError, iif, of, throwError } from 'rxjs';
 import oneDayForecastData from '@mock-data/oneDayForecastData.json';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpParams,
+} from '@angular/common/http';
 import { apiEndPoint } from '@constants/apiEndPoints';
 
 @Injectable({
@@ -15,9 +19,20 @@ export class DailyForecastService {
     return iif(
       isDevMode,
       of(oneDayForecastData),
-      this.http.get<any>(`${apiEndPoint.oneDayForecast}${cityKey}`, {
-        params,
-      })
+      this.http
+        .get<any>(`${apiEndPoint.oneDayForecast}${cityKey}`, {
+          params,
+        })
+        .pipe(
+          catchError((error: HttpErrorResponse) => {
+            if (error.status === 503) {
+              console.error('API limit reached, using default data');
+              return of(oneDayForecastData);
+            }
+
+            return throwError(() => new Error('Something went wrong'));
+          })
+        )
     );
   }
 }

@@ -12,6 +12,8 @@
   transform: translate(-50%, -50%);
 
   z-index: 10;
+
+  transition: 0.3s ease-in-out;
 }
 
 .cityInput {
@@ -22,9 +24,28 @@
   border-radius: $radius-28;
   outline: none;
   padding-inline: 56px 16px;
+  transition: 0.3s ease-in-out;
 }
 
 .cityInput:focus-visible {
   outline: none;
   filter: drop-shadow($shadow-2);
+}
+
+@media (max-width: 480px) {
+  .searchForm {
+    width: 48px;
+  }
+  .cityInput {
+    padding: 22px 28px 22px 28px;
+    height: 50px;
+  }
+
+  .cityInput:focus {
+    position: absolute;
+    width: 100vw;
+    /* width: calc(100vw); */
+    z-index: 100;
+    transform: translate(-70%, -50%);
+  }
 }
