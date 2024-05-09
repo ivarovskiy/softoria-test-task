@@ -35,7 +35,7 @@ After successfully installing the packages, enter the serve command in the termi
 ```
 $ ng serve
 ```
-## 😷 Added server error handling, if the request limit is exhausted - switch to default values 🤗
+### 😷 Added server error handling, if the request limit is exhausted - switch to default values 🤗
 ## 📝 I created my own layout and tried to display how I see a beautiful and convenient application, and I hope you like it. Thanks for your attention! 🤝
 
 ## [Try it yourself](https://angular-weather-app-81cc4.web.app/)
