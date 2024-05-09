@@ -30,6 +30,9 @@ export const httpInterceptor: HttpInterceptorFn = (req, next) => {
           'Request had bad syntax or the parameters supplied were invalid.'
         );
       }
+      if (e.status === 503) {
+        console.error('API limit reached, using default data');
+      }
       console.error(e.message);
       const error = e.error?.error?.message || e.statusText;
       return throwError(() => error);

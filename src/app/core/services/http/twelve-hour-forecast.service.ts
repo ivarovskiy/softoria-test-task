@@ -1,8 +1,4 @@
-import {
-  HttpClient,
-  HttpErrorResponse,
-  HttpParams,
-} from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject, isDevMode } from '@angular/core';
 import twelveHoursForecast from '@mock-data/twelveHoursForecast.json';
 import { Observable, catchError, iif, of, throwError } from 'rxjs';
@@ -29,13 +25,13 @@ export class TwelveHourForecastService {
           }
         )
         .pipe(
-          catchError((error: HttpErrorResponse) => {
-            if (error.status === 503) {
+          catchError((error: any) => {
+            if (error) {
               console.error('API limit reached, using default data');
               return of(twelveHoursForecast);
             }
 
-            return throwError(() => new Error('Something went wrong'));
+            return throwError(() => error);
           })
         )
     );

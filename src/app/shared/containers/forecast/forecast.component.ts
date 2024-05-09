@@ -72,6 +72,8 @@ export class ForecastComponent implements OnInit, OnDestroy {
           dailyForecast: this.dailyForecastService.getDailyForecast(cityKey),
         }).subscribe({
           next: response => {
+            console.log('city key is: ', cityKey);
+
             const combinedData = {
               mainForecastData: response.currentWeather[0],
               aqi: response.airQuality?.list[0].main.aqi,
